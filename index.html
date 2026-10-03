@@ -60,64 +60,101 @@
   }
   a {
     color: #0a58ca;
+    overflow-wrap: anywhere;
   }
 </style>
 </head>
 <body>
 
 <h1>Política de Privacidade — PARÇA</h1>
-<p class="updated">Última atualização: 11 de setembro de 2026</p>
+<p class="updated">Última atualização: 3 de outubro de 2026</p>
 
 <p>Esta Política de Privacidade descreve como o aplicativo PARÇA ("nós", "nosso", "o aplicativo") coleta, usa e protege as informações dos seus usuários ("você", "motorista").</p>
 
 <h2>1. Quem somos</h2>
-<p>PARÇA é um aplicativo de inteligência operacional para motoristas de aplicativo de transporte (Uber, 99), desenvolvido para ajudar o motorista a decidir se deve aceitar ou recusar uma oferta de corrida, com base em cálculo de lucro real, custo operacional e qualidade do destino.</p>
+<p>PARÇA é um aplicativo de inteligência operacional para motoristas de aplicativos de transporte, como Uber e 99. Ele ajuda a analisar ofertas por meio de estimativas financeiras, custos operacionais e informações sobre o destino.</p>
+<p>O responsável pelo tratamento descrito nesta política é o <strong>PARÇA</strong>. Para assuntos de privacidade e exercício de direitos, entre em contato pelo e-mail <a href="mailto:neuroimpactotreinamentos@gmail.com">neuroimpactotreinamentos@gmail.com</a>.</p>
 
 <h2>2. Como o PARÇA funciona (contexto necessário para entender a coleta)</h2>
-<p>O PARÇA utiliza o <strong>Serviço de Acessibilidade do Android</strong> para ler o conteúdo exibido na tela pelos aplicativos Uber e 99 quando uma oferta de corrida aparece — valor, distância, tempo estimado e destino — e processa essa informação localmente no seu dispositivo para calcular uma recomendação.</p>
-<p><strong>O PARÇA não lê, armazena nem transmite conteúdo de nenhum outro aplicativo</strong> além das telas de oferta de corrida do Uber/99, e não acessa mensagens, senhas, dados bancários ou qualquer informação fora desse escopo específico.</p>
+<p>Com o Serviço de Acessibilidade do Android ativado por você, o PARÇA identifica informações visíveis durante a operação nos aplicativos de transporte compatíveis. Isso inclui valor, tempo, distância, origem e destino quando exibidos, além de <strong>informações visíveis de faturamento</strong>.</p>
+<p>O aplicativo utiliza leitura de conteúdo acessível e capturas de tela com reconhecimento de texto para analisar ofertas, calcular indicadores operacionais e financeiros e apresentar recomendações. A leitura é direcionada aos aplicativos compatíveis; capturas de tela podem conter outros elementos que estejam visíveis naquele momento.</p>
+<p><strong>O PARÇA não aceita, recusa ou seleciona corridas automaticamente.</strong> A decisão e a ação final permanecem com o motorista. O reconhecimento de texto e o cálculo das recomendações ocorrem no dispositivo; os registros estruturados descritos abaixo podem ser enviados ao backend do PARÇA.</p>
 
 <h2>3. Quais dados coletamos</h2>
 
 <h3>3.1 Dados fornecidos por você</h3>
 <ul>
-  <li>Informações de configuração financeira (valor de aluguel do veículo, tipo e preço de combustível ou tarifa de energia elétrica, consumo, gastos com alimentação/pedágio/lavagem/manutenção, meta de lucro) — usadas exclusivamente para calcular seu custo operacional real.</li>
+  <li>Configuração financeira, como aluguel do veículo, combustível ou energia, consumo, gastos operacionais, jornada de trabalho e metas. Esses dados alimentam cálculos de custo, lucro estimado, metas e indicadores do turno.</li>
+  <li>Cidade e preferências operacionais, como regiões de trabalho preferidas, usadas para contextualizar as recomendações.</li>
 </ul>
 
 <h3>3.2 Dados lidos automaticamente da tela (Acessibilidade)</h3>
 <ul>
-  <li>Texto de ofertas de corrida exibidas pelo Uber/99: valor, distância, tempo estimado, endereço de origem e destino (como texto).</li>
-  <li>Essas informações são processadas localmente para gerar a recomendação de aceitar ou recusar.</li>
+  <li>Informações das ofertas: plataforma, categoria, valor, tempo e distância de embarque e viagem, origem e destino como texto, quando disponíveis.</li>
+  <li>Informações visíveis de faturamento nas plataformas compatíveis, usadas nos indicadores financeiros do turno.</li>
+  <li>O processamento local pode utilizar capturas de tela e o texto reconhecido nelas. Isso não significa que as imagens ou o texto bruto integrem os eventos de telemetria remota.</li>
 </ul>
 
 <h3>3.3 Dados de diagnóstico técnico (opcional, ativado manualmente)</h3>
 <ul>
-  <li>Quando você ativa o modo "Diagnóstico" (ferramenta de suporte técnico), o aplicativo pode registrar capturas de tela e registros técnicos do funcionamento interno, para fins de identificação e correção de problemas. Essas informações <strong>não são enviadas automaticamente</strong> a nenhum servidor — ficam armazenadas localmente, no seu próprio dispositivo, em área privada do aplicativo, e são excluídas automaticamente após um número limitado de sessões.</li>
+  <li>Quando você ativa uma sessão de diagnóstico, o aplicativo pode guardar capturas de tela, texto reconhecido e registros técnicos para investigar problemas. Esses arquivos podem conter informações visíveis de ofertas e endereços.</li>
+  <li>Os arquivos são armazenados localmente e podem ser exportados ou compartilhados por você. <strong>Não são enviados pelo pipeline de telemetria remota estruturada do PARÇA.</strong> Um compartilhamento manual é separado desse pipeline; confira o conteúdo antes de compartilhá-lo.</li>
 </ul>
 
-<h3>3.4 Dados de telemetria interna (uso do próprio produto)</h3>
+<h3>3.4 Telemetria operacional local e remota</h3>
+<p>Na versão com telemetria remota habilitada, o PARÇA registra eventos estruturados localmente e os envia para sua infraestrutura de backend. As finalidades são funcionamento e confiabilidade, diagnóstico, melhoria do produto, análise operacional e evolução dos modelos e regras do PARÇA.</p>
+<p>Conforme o tipo de evento e a disponibilidade das informações, os registros podem incluir:</p>
 <ul>
-  <li>O PARÇA registra localmente, no seu dispositivo, um histórico simplificado das ofertas processadas (valor, zona geográfica textual de origem/destino, categoria do veículo, se foi aceita ou recusada) para fins de aprimoramento futuro do algoritmo de recomendação. Esses dados <strong>permanecem apenas no seu dispositivo</strong> nesta versão do aplicativo e não são enviados a nenhum servidor externo.</li>
+  <li>Identificadores técnicos da instalação, da autenticação, do evento, da sessão, do turno e da oferta, inclusive identificadores para relacionar eventos.</li>
+  <li>Plataforma, cidade e regiões operacionais, classificação territorial e transição entre regiões.</li>
+  <li>Indicadores de correspondência com destino preferido ou de retorno para casa, intenção do turno e uso de inteligência regional.</li>
+  <li>Receita por quilômetro e por hora, lucro estimado e lucro estimado por hora, IQC (índice de qualidade da corrida), recomendação, justificativa e regra ou caminho que fundamentou a recomendação.</li>
+  <li>Faturamento registrado do turno, meta de receita e indicadores de ritmo atual e necessário.</li>
+  <li>Versão do aplicativo e de componentes internos, tipo do evento, datas e horários.</li>
 </ul>
+<p><strong>ACEITAR e RECUSAR representam a recomendação gerada pelo PARÇA.</strong> Esses registros não comprovam que o motorista aceitou, recusou, selecionou ou realizou uma corrida.</p>
 
-<h3>3.5 Área operacional preferida (opcional)</h3>
+<h3>3.5 Identificadores técnicos</h3>
+<p>O identificador de instalação (<code>deviceInstallId</code>) é gerado pelo aplicativo e persistido localmente para associar eventos operacionais. O serviço de autenticação anônima do backend cria outro identificador técnico (<code>auth UID</code>) para a sessão autenticada. Esse mecanismo não exige cadastro com nome, CPF ou e-mail.</p>
+<p>Esses identificadores são <strong>técnicos e pseudônimos</strong>: permitem relacionar registros e não representam garantia de anonimização absoluta. A expressão "autenticação anônima" descreve o mecanismo de acesso sem cadastro nominal, não a impossibilidade de associação dos dados a uma pessoa.</p>
+
+<h2>4. O que não integra os eventos remotos do PARÇA</h2>
+<p>O contrato atual de telemetria estruturada não inclui no conteúdo dos eventos:</p>
 <ul>
-  <li>Você pode, se quiser, indicar quais regiões da cidade fazem parte da sua área de trabalho preferida. Essa informação é usada apenas para ajustar a recomendação às suas próprias preferências de deslocamento, fica armazenada localmente no seu dispositivo, e não é enviada a nenhum servidor.</li>
+  <li>Endereços brutos de origem ou destino.</li>
+  <li>Capturas de tela ou texto bruto de reconhecimento óptico (OCR).</li>
+  <li>Telefone, e-mail, CPF ou placa do veículo.</li>
+  <li>Coordenadas GPS exatas.</li>
 </ul>
+<p>Essa delimitação vale para o conteúdo dos eventos enviados pelo pipeline do PARÇA, não para toda comunicação do aplicativo, compartilhamentos manuais ou práticas de fornecedores. Tokens de autenticação podem trafegar para o Supabase para autenticar, renovar e autorizar a conexão, mas não integram o conteúdo desses eventos.</p>
 
-<h2>4. O que NÃO coletamos</h2>
+<h2>5. Fornecedores técnicos</h2>
+<h3>5.1 Supabase</h3>
+<p>O PARÇA utiliza o Supabase como fornecedor de infraestrutura de backend para autenticação técnica anônima e armazenamento de telemetria estruturada. Os identificadores técnicos e os registros descritos nesta política são utilizados nessa integração. A sessão de autenticação também mantém informações técnicas localmente para reutilizar e renovar o acesso.</p>
+<h3>5.2 Google ML Kit</h3>
+<p>O PARÇA utiliza o Google ML Kit para reconhecer texto nas imagens no próprio dispositivo. Isso não significa ausência de comunicação do SDK: a documentação do Google informa a coleta de informações técnicas e diagnósticas pelo ML Kit. As práticas do fornecedor são descritas na <a href="https://developers.google.com/ml-kit/android-data-disclosure">documentação de tratamento de dados do ML Kit</a>. Os limites do conteúdo dos eventos do PARÇA não substituem as práticas desse SDK.</p>
+
+<h2>6. Armazenamento local e backup</h2>
+<p>Parte dos dados permanece no armazenamento local do aplicativo, como configurações, preferências, registros operacionais, fila de telemetria e arquivos de diagnóstico. A telemetria transmitida também fica no backend; portanto, não afirmamos que todos os dados permanecem apenas no aparelho.</p>
+<p>O Android pode copiar determinados dados da aplicação em backups ou transferências entre dispositivos, conforme as configurações do sistema e as regras do aplicativo. As regras atuais excluem a pasta interna de diagnósticos, as preferências de sessão diagnóstica e o banco local de histórico de ofertas. <strong>Essas exclusões não abrangem automaticamente todos os bancos e preferências</strong>, como a fila de telemetria e as informações técnicas de identidade e autenticação. Não apenas a configuração financeira pode participar do backup.</p>
+<p>Arquivos exportados para outra pasta ou compartilhados por você não estão sob o controle da limpeza da pasta interna de diagnósticos.</p>
+
+<h2>7. Retenção e exclusão</h2>
+<h3>7.1 Regras locais implementadas</h3>
 <ul>
-  <li>Não coletamos localização GPS contínua do seu trajeto.</li>
-  <li>Não lemos nem armazenamos conteúdo de outros aplicativos além das telas de oferta do Uber/99.</li>
-  <li>Não vendemos, alugamos ou compartilhamos seus dados com terceiros para fins de publicidade.</li>
-  <li>Não exigimos cadastro com nome, e-mail ou CPF para usar o aplicativo nesta versão.</li>
+  <li>Na fila local de telemetria, a rotina de limpeza remove registros já enviados com mais de 7 dias desde sua criação e registros marcados como não reenviáveis com mais de 3 dias desde sua criação. A rotina é acionada ao inserir eventos; esses prazos não são uma garantia de remoção imediata na data-limite.</li>
+  <li>Essa rotina não estabelece prazo máximo para registros pendentes de envio ou com falha que permita nova tentativa. A limpeza por quantidade atinge registros já enviados, não impõe um teto geral à fila.</li>
+  <li>A rotina de diagnósticos busca manter 3 sessões, preservando sessões ainda em uso ou com gravações pendentes. Trata-se de rotação por sessões, não de um prazo em dias, e não elimina cópias exportadas ou compartilhadas.</li>
 </ul>
+<h3>7.2 Retenção remota</h3>
+<p>Os eventos de telemetria remota são mantidos, em regra, por <strong>até 90 dias</strong> a partir do registro no banco de dados, com data controlada pelo servidor. Após esse prazo, ficam sujeitos à exclusão por rotinas administrativas no backend. A execução dessas rotinas pode sofrer atrasos técnicos; não prometemos exclusão instantânea no segundo em que o prazo termina.</p>
+<p>Podem ser preservados registros específicos quando necessário para obrigação legal ou regulatória, exercício regular de direitos, investigação de incidente de segurança ou disputa ou dever jurídico específico. Essas exceções devem ter motivo documentado, aprovação e prazo definido, e não autorizam conservação indefinida por conveniência. A regra de 90 dias se refere aos eventos remotos; não representa exclusão automática de registros de autenticação, mensagens de suporte ou backups mantidos segundo seus próprios ciclos e obrigações aplicáveis.</p>
+<h3>7.3 Exclusão remota por solicitação</h3>
+<p>Solicite a exclusão pelo e-mail <a href="mailto:neuroimpactotreinamentos@gmail.com">neuroimpactotreinamentos@gmail.com</a>. Podemos pedir informações técnicas mínimas para confirmar a legitimidade do pedido e localizar os registros, como o identificador da instalação e, quando necessário, o identificador técnico de autenticação. Não envie senha, token de acesso, CPF ou documentos pessoais sem necessidade.</p>
+<p>Nosso <strong>prazo interno de atendimento é de até 15 dias corridos após o recebimento de informações suficientes para localizar os registros</strong>. Este é um compromisso operacional do PARÇA, não a afirmação de um prazo legal universal da LGPD. Informaremos o resultado e eventual preservação justificada. A exclusão é realizada administrativamente no backend; o aplicativo não recebe permissão de exclusão direta dos eventos remotos.</p>
+<p>Limpar os dados do aplicativo ou desinstalá-lo remove seus dados locais gerenciados pelo Android, mas <strong>não solicita nem comprova a exclusão das cópias já enviadas ao backend</strong>, de backups ou de arquivos exportados. Desativar a Acessibilidade interrompe novas leituras por esse serviço; não apaga registros anteriores nem equivale a cancelar os envios já pendentes.</p>
 
-<h2>5. Onde os dados ficam armazenados</h2>
-<p>A grande maioria dos dados do PARÇA (configuração financeira, diagnóstico técnico, telemetria) é armazenada <strong>localmente no seu dispositivo</strong>, em área privada do aplicativo, protegida pelo sistema Android e inacessível a outros aplicativos.</p>
-<p>Dados excluídos automaticamente do backup do sistema: informações de diagnóstico técnico não são incluídas em cópias de segurança automáticas do Android, mesmo quando essa função está ativada no seu aparelho — apenas sua configuração financeira é preservada em backup, para facilitar a restauração ao trocar de aparelho.</p>
-
-<h2>6. Permissões solicitadas e por que</h2>
+<h2>8. Permissões e acessos utilizados</h2>
 <table>
   <tr>
     <th>Permissão</th>
@@ -125,32 +162,41 @@
   </tr>
   <tr>
     <td><strong>Serviço de Acessibilidade</strong></td>
-    <td>Ler o texto das ofertas de corrida exibidas pelo Uber/99 na tela, essencial para a função principal do aplicativo.</td>
+    <td>Identificar informações visíveis de ofertas e faturamento nos aplicativos compatíveis e obter capturas para reconhecimento de texto.</td>
   </tr>
   <tr>
     <td><strong>Ignorar otimização de bateria</strong></td>
-    <td>Garantir que o aplicativo continue funcionando corretamente em segundo plano durante o turno de trabalho, sem ser interrompido pelo sistema.</td>
+    <td>Reduzir restrições ao funcionamento em segundo plano durante o turno. A isenção não garante ausência de interrupções pelo sistema.</td>
   </tr>
   <tr>
     <td><strong>Sobreposição sobre outros aplicativos</strong></td>
-    <td>Exibir a recomendação (aceitar/recusar) diretamente sobre a tela do Uber/99, no momento em que a oferta aparece.</td>
+    <td>Exibir a recomendação sobre a tela do aplicativo de transporte, sem executar a ação pelo motorista.</td>
+  </tr>
+  <tr>
+    <td><strong>Acesso à internet</strong></td>
+    <td>Comunicar com os serviços de autenticação e telemetria. Esse acesso não utiliza uma solicitação individual de permissão em tempo de execução no Android.</td>
   </tr>
 </table>
-<p>Todas essas permissões são solicitadas com explicação prévia, no processo de configuração inicial do aplicativo, e podem ser revogadas a qualquer momento pelas configurações do seu aparelho Android — a função principal do aplicativo deixa de funcionar corretamente sem elas.</p>
+<p>Você controla a ativação da Acessibilidade, a sobreposição e as opções de bateria nas configurações do Android. Desativá-las pode limitar ou impedir recursos do aplicativo.</p>
 
-<h2>7. Seus direitos</h2>
-<p>Você pode, a qualquer momento:</p>
+<h2>9. Seus direitos e controles</h2>
+<p>A Lei Geral de Proteção de Dados (LGPD) assegura direitos, observadas as condições e exceções legais, incluindo:</p>
 <ul>
-  <li>Desativar o Serviço de Acessibilidade nas configurações do Android, interrompendo a coleta de dados de oferta.</li>
-  <li>Excluir os dados locais do aplicativo através de Configurações &gt; Aplicativos &gt; PARÇA &gt; Armazenamento &gt; Limpar dados.</li>
-  <li>Desinstalar o aplicativo, removendo permanentemente todos os dados armazenados localmente.</li>
+  <li>Obter confirmação do tratamento e acesso aos seus dados.</li>
+  <li>Solicitar correção de dados incompletos, inexatos ou desatualizados, quando aplicável.</li>
+  <li>Solicitar eliminação, anonimização ou bloqueio nas hipóteses previstas em lei.</li>
+  <li>Obter informações sobre o tratamento e sobre o compartilhamento de dados.</li>
+  <li>Revogar consentimento quando ele for a base aplicável ao tratamento.</li>
 </ul>
+<p>Consulte também as <a href="https://www.gov.br/anpd/pt-br/assuntos/titular-de-dados/direito-dos-titulares">orientações da ANPD sobre os direitos dos titulares</a>. Esta descrição não representa certificação de conformidade jurídica.</p>
+<p>No aparelho, você pode desativar a Acessibilidade e limpar os dados em Configurações &gt; Aplicativos &gt; PARÇA &gt; Armazenamento, observadas as limitações sobre dados remotos e backups da seção 7.</p>
+<p>Para exercer seus direitos, use <a href="mailto:neuroimpactotreinamentos@gmail.com">neuroimpactotreinamentos@gmail.com</a>. O PARÇA verificará a legitimidade da solicitação e localizará os registros com as informações mínimas necessárias, conforme o procedimento e o prazo interno da seção 7.3, sem limitar os direitos e prazos legais aplicáveis.</p>
 
-<h2>8. Alterações nesta política</h2>
-<p>Podemos atualizar esta Política de Privacidade conforme o aplicativo evolui. A data da última atualização está sempre indicada no topo deste documento. Mudanças significativas serão comunicadas dentro do próprio aplicativo.</p>
+<h2>10. Alterações nesta política</h2>
+<p>Esta política pode ser atualizada conforme o aplicativo evolui. A versão publicada fica disponível na <a href="https://2402-faustino.github.io/parca-legal/">página oficial de privacidade do PARÇA</a>, com a data da última atualização.</p>
 
-<h2>9. Contato</h2>
-<p>Dúvidas sobre esta Política de Privacidade podem ser enviadas para: <strong><a href="mailto:neuroimpactotreinamentos@gmail.com">neuroimpactotreinamentos@gmail.com</a></strong></p>
+<h2>11. Contato</h2>
+<p>Dúvidas, solicitações de exclusão e exercício de direitos podem ser enviados para: <strong><a href="mailto:neuroimpactotreinamentos@gmail.com">neuroimpactotreinamentos@gmail.com</a></strong></p>
 
 <hr>
 <footer>Este aplicativo está atualmente em fase de teste fechado (beta) e é destinado exclusivamente a motoristas parceiros convidados.</footer>
