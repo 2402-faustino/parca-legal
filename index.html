@@ -67,7 +67,7 @@
 <body>
 
 <h1>Política de Privacidade — PARÇA</h1>
-<p class="updated">Última atualização: 3 de outubro de 2026</p>
+<p class="updated">Última atualização: 1 de novembro de 2026</p>
 
 <p>Esta Política de Privacidade descreve como o aplicativo PARÇA ("nós", "nosso", "o aplicativo") coleta, usa e protege as informações dos seus usuários ("você", "motorista").</p>
 
@@ -84,10 +84,13 @@
 
 <h3>3.1 Dados fornecidos por você</h3>
 <ul>
+  <li>Dados de conta: e-mail para cadastro, confirmação, autenticação e recuperação de acesso. A senha é tratada pelo serviço de autenticação e não integra os eventos de telemetria.</li>
+  <li>Número de WhatsApp informado no cadastro, para suporte e comunicação sobre a conta. O fluxo atual não confirma a titularidade do número por SMS ou WhatsApp; esse contato não é uma credencial de login.</li>
   <li>Configuração financeira, como aluguel do veículo, combustível ou energia, consumo, gastos operacionais, jornada de trabalho e metas. Esses dados alimentam cálculos de custo, lucro estimado, metas e indicadores do turno.</li>
   <li>Cidade e preferências operacionais, como regiões de trabalho preferidas, usadas para contextualizar as recomendações.</li>
 </ul>
 
+<p>O período de acesso gratuito, quando concedido, é vinculado à conta e controlado pelo servidor: são sete dias, sem cartão e sem cobrança automática. O registro da conta e do contato permite controlar esse acesso sem iniciar uma assinatura paga.</p>
 <h3>3.2 Dados lidos automaticamente da tela (Acessibilidade)</h3>
 <ul>
   <li>Informações das ofertas: plataforma, categoria, valor, tempo e distância de embarque e viagem, origem e destino como texto, quando disponíveis.</li>
@@ -111,12 +114,13 @@
   <li>Receita por quilômetro e por hora, lucro estimado e lucro estimado por hora, IQC (índice de qualidade da corrida), recomendação, justificativa e regra ou caminho que fundamentou a recomendação.</li>
   <li>Faturamento registrado do turno, meta de receita e indicadores de ritmo atual e necessário.</li>
   <li>Versão do aplicativo e de componentes internos, tipo do evento, datas e horários.</li>
+  <li>Métricas de latência e observações estruturadas das etapas de captura, decisão e apresentação, com códigos técnicos e sem imagens ou texto bruto.</li>
 </ul>
 <p><strong>ACEITAR e RECUSAR representam a recomendação gerada pelo PARÇA.</strong> Esses registros não comprovam que o motorista aceitou, recusou, selecionou ou realizou uma corrida.</p>
 
 <h3>3.5 Identificadores técnicos</h3>
-<p>O identificador de instalação (<code>deviceInstallId</code>) é gerado pelo aplicativo e persistido localmente para associar eventos operacionais. O serviço de autenticação anônima do backend cria outro identificador técnico (<code>auth UID</code>) para a sessão autenticada. Esse mecanismo não exige cadastro com nome, CPF ou e-mail.</p>
-<p>Esses identificadores são <strong>técnicos e pseudônimos</strong>: permitem relacionar registros e não representam garantia de anonimização absoluta. A expressão "autenticação anônima" descreve o mecanismo de acesso sem cadastro nominal, não a impossibilidade de associação dos dados a uma pessoa.</p>
+<p>O identificador de instalação (<code>deviceInstallId</code>) é gerado pelo aplicativo e persistido localmente para associar eventos operacionais. O backend utiliza outro identificador técnico (<code>auth UID</code>) para a identidade autenticada, inclusive nas contas cadastradas por e-mail. Os eventos autorizados são associados a essa identidade.</p>
+<p>Esses identificadores são <strong>técnicos e pseudônimos</strong>: permitem relacionar registros e podem estar associados à conta; não representam garantia de anonimização absoluta. Quando um recurso utiliza uma sessão técnica anônima, isso também não impede, por si só, a associação dos dados a uma pessoa.</p>
 
 <h2>4. O que não integra os eventos remotos do PARÇA</h2>
 <p>O contrato atual de telemetria estruturada não inclui no conteúdo dos eventos:</p>
@@ -130,7 +134,7 @@
 
 <h2>5. Fornecedores técnicos</h2>
 <h3>5.1 Supabase</h3>
-<p>O PARÇA utiliza o Supabase como fornecedor de infraestrutura de backend para autenticação técnica anônima e armazenamento de telemetria estruturada. Os identificadores técnicos e os registros descritos nesta política são utilizados nessa integração. A sessão de autenticação também mantém informações técnicas localmente para reutilizar e renovar o acesso.</p>
+<p>O PARÇA utiliza o Supabase como fornecedor de infraestrutura de backend para autenticação, cadastro e contato de conta, controle do acesso gratuito e armazenamento de telemetria estruturada. Os identificadores técnicos e os registros descritos nesta política são utilizados nessa integração. A sessão de autenticação também mantém informações técnicas localmente para reutilizar e renovar o acesso.</p>
 <h3>5.2 Google ML Kit</h3>
 <p>O PARÇA utiliza o Google ML Kit para reconhecer texto nas imagens no próprio dispositivo. Isso não significa ausência de comunicação do SDK: a documentação do Google informa a coleta de informações técnicas e diagnósticas pelo ML Kit. As práticas do fornecedor são descritas na <a href="https://developers.google.com/ml-kit/android-data-disclosure">documentação de tratamento de dados do ML Kit</a>. Os limites do conteúdo dos eventos do PARÇA não substituem as práticas desse SDK.</p>
 
@@ -150,6 +154,7 @@
 <p>Os eventos de telemetria remota são mantidos, em regra, por <strong>até 90 dias</strong> a partir do registro no banco de dados, com data controlada pelo servidor. Após esse prazo, ficam sujeitos à exclusão por rotinas administrativas no backend. A execução dessas rotinas pode sofrer atrasos técnicos; não prometemos exclusão instantânea no segundo em que o prazo termina.</p>
 <p>Podem ser preservados registros específicos quando necessário para obrigação legal ou regulatória, exercício regular de direitos, investigação de incidente de segurança ou disputa ou dever jurídico específico. Essas exceções devem ter motivo documentado, aprovação e prazo definido, e não autorizam conservação indefinida por conveniência. A regra de 90 dias se refere aos eventos remotos; não representa exclusão automática de registros de autenticação, mensagens de suporte ou backups mantidos segundo seus próprios ciclos e obrigações aplicáveis.</p>
 <h3>7.3 Exclusão remota por solicitação</h3>
+<p>No aplicativo, o caminho <strong>Perfil &gt; App &gt; Conta e acesso &gt; Excluir minha conta</strong> solicita a exclusão ao backend autenticado. A operação só deve ser considerada concluída após confirmação de sucesso; sair da conta ou receber erro não comprova a exclusão. Se o caminho estiver indisponível ou falhar, utilize o canal externo abaixo.</p>
 <p>Solicite a exclusão pelo e-mail <a href="mailto:neuroimpactotreinamentos@gmail.com">neuroimpactotreinamentos@gmail.com</a>. Podemos pedir informações técnicas mínimas para confirmar a legitimidade do pedido e localizar os registros, como o identificador da instalação e, quando necessário, o identificador técnico de autenticação. Não envie senha, token de acesso, CPF ou documentos pessoais sem necessidade.</p>
 <p>Nosso <strong>prazo interno de atendimento é de até 15 dias corridos após o recebimento de informações suficientes para localizar os registros</strong>. Este é um compromisso operacional do PARÇA, não a afirmação de um prazo legal universal da LGPD. Informaremos o resultado e eventual preservação justificada. A exclusão é realizada administrativamente no backend; o aplicativo não recebe permissão de exclusão direta dos eventos remotos.</p>
 <p>Limpar os dados do aplicativo ou desinstalá-lo remove seus dados locais gerenciados pelo Android, mas <strong>não solicita nem comprova a exclusão das cópias já enviadas ao backend</strong>, de backups ou de arquivos exportados. Desativar a Acessibilidade interrompe novas leituras por esse serviço; não apaga registros anteriores nem equivale a cancelar os envios já pendentes.</p>
@@ -199,7 +204,9 @@
 <p>Dúvidas, solicitações de exclusão e exercício de direitos podem ser enviados para: <strong><a href="mailto:neuroimpactotreinamentos@gmail.com">neuroimpactotreinamentos@gmail.com</a></strong></p>
 
 <hr>
-<footer>Este aplicativo está atualmente em fase de teste fechado (beta) e é destinado exclusivamente a motoristas parceiros convidados.</footer>
+<footer>O PARÇA é destinado a motoristas de aplicativos de transporte. A disponibilidade dos recursos depende da versão e da fase de liberação; esta política não constitui anúncio de publicação nem habilitação de cobrança.</footer>
 
 </body>
 </html>
+
+
