@@ -67,7 +67,7 @@
 <body>
 
 <h1>Política de Privacidade — PARÇA</h1>
-<p class="updated">Última atualização: 1 de novembro de 2026</p>
+<p class="updated">Última atualização: 2 de novembro de 2026</p>
 <p><a href="#solicitar-exclusao">Solicitar exclusão de conta e dados</a> — veja o canal externo, as etapas e as regras de retenção na seção 7.</p>
 
 <p>Esta Política de Privacidade descreve como o aplicativo PARÇA ("nós", "nosso", "o aplicativo") coleta, usa e protege as informações dos seus usuários ("você", "motorista").</p>
@@ -147,8 +147,8 @@
 <h2>7. Retenção e exclusão</h2>
 <h3>7.1 Regras locais implementadas</h3>
 <ul>
-  <li>Na fila local de telemetria, a rotina de limpeza remove registros já enviados com mais de 7 dias desde sua criação e registros marcados como não reenviáveis com mais de 3 dias desde sua criação. A rotina é acionada ao inserir eventos; esses prazos não são uma garantia de remoção imediata na data-limite.</li>
-  <li>Essa rotina não estabelece prazo máximo para registros pendentes de envio ou com falha que permita nova tentativa. A limpeza por quantidade atinge registros já enviados, não impõe um teto geral à fila.</li>
+  <li>A fila local de telemetria possui limite de 5.000 registros. As rotinas de limpeza removem registros já enviados com mais de sete dias e registros marcados como não reenviáveis com mais de três dias, contados desde sua criação. Pendências de envio ou com falha temporária ficam sujeitas a expiração após 14 dias, verificada durante a rotina de upload. Após 25 tentativas de rede, o registro é marcado como não reenviável.</li>
+  <li>Ao atingir o teto de armazenamento, a limpeza prioriza registros enviados, depois não reenviáveis e, por último, as pendências mais antigas. Descartes de pendências são contabilizados; esses limites não garantem entrega integral nem exclusão instantânea no instante do vencimento.</li>
   <li>A rotina de diagnósticos busca manter 3 sessões, preservando sessões ainda em uso ou com gravações pendentes. Trata-se de rotação por sessões, não de um prazo em dias, e não elimina cópias exportadas ou compartilhadas.</li>
 </ul>
 <h3>7.2 Retenção remota</h3>
@@ -209,5 +209,3 @@
 
 </body>
 </html>
-
-
